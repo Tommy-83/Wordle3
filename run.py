@@ -14,8 +14,11 @@ def pick_a_word():
 start_menu()
 word = pick_a_word()
 
-for guess in range(1, 7):
+for attempt in range(1, 7):
     guess = input().lower()
+
+    sys.stdout.write('\x1b[1A')
+    sys.stdout.write('\x1b[1K')
 
     for i in range( min(len(guess), 5) ):
         if guess[i] == word[i]:
@@ -23,4 +26,8 @@ for guess in range(1, 7):
         elif guess[i] in word:
             print(colored(guess[i], 'yellow'), end="")
         else:
-            print(guess[1], end="")
+            print(guess[i], end="")
+
+    if guess == word:
+            print(colored(f"Well done! You guessed the Wordle in {attempt}", 'green'))
+            break
