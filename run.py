@@ -1,4 +1,5 @@
 import random
+import sys
 
 def start_menu():
     print("Welcome To Wordle by Tommy")
@@ -10,3 +11,5 @@ def pick_a_word():
         return random.choice(words)
 
 start_menu()
+word = pick_a_word()
+
