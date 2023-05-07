@@ -1,5 +1,6 @@
 import random
 import sys
+from termcolor import colored
 
 def start_menu():
     print("Welcome To Wordle by Tommy")
